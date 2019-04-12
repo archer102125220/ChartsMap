@@ -1,0 +1,53 @@
+[
+  {
+    "item" : "自行開發",
+    "title" : "未來欲投入之內部資訊系統",
+    "Taipei" : "10",
+    "New Taipei" : "22",
+    "Taoyuan" : "11",
+    "Hsinchu" : "6",
+    "Miaoli" : "3",
+    "Taichung" : "12",
+    "Changhua" : "3",
+    "Yunlin" : "8",
+    "Tainan" : "7",
+    "Kaohsiung" : "10",
+    "Hualien" : "9",
+    "Taitung" : "6",
+    "Total" : "107"
+  },
+  {
+    "item" : "委託開發",
+    "title" : "未來欲投入之內部資訊系統",
+    "Taipei" : "33",
+    "New Taipei" : "49",
+    "Taoyuan" : "13",
+    "Hsinchu" : "11",
+    "Miaoli" : "12",
+    "Taichung" : "18",
+    "Changhua" : "8",
+    "Yunlin" : "10",
+    "Tainan" : "11",
+    "Kaohsiung" : "17",
+    "Hualien" : "5",
+    "Taitung" : "5",
+    "Total" : "192"
+  },
+  {
+    "item" : "購買現成",
+    "title" : "未來欲投入之內部資訊系統",
+    "Taipei" : "16",
+    "New Taipei" : "35",
+    "Taoyuan" : "13",
+    "Hsinchu" : "15",
+    "Miaoli" : "11",
+    "Taichung" : "23",
+    "Changhua" : "25",
+    "Yunlin" : "32",
+    "Tainan" : "19",
+    "Kaohsiung" : "26",
+    "Hualien" : "8",
+    "Taitung" : "8",
+    "Total" : "231"
+  }
+]

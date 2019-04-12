@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>長照ABC單位綜合統計</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="map"></div>
+	<h1 id="Title"></h1>
+	<div class="data-control">
+		<h1>統計類型選擇與說明</h1>
+		<hr />
+		<h2>表格</h2>
+		<select id="FileSelect"></select>
+		<h2>項目</h2>
+		<select id="DataTag"></select>
+		<h2>圖色</h2>
+		<div class="data-color"><span data-color="red"></span>　第一名</div>
+		<div class="data-color"><span data-color="yellow"></span>　第二名</div>
+		<div class="data-color"><span data-color="green"></span>　第三名</div>
+	</div>
+
+	<!-- amCharts javascript sources -->
+	<script type="text/javascript" src="./lib//ammap.js"></script>
+	<script type="text/javascript" src="./lib/taiwanLow.js"></script>
+	<script type="text/javascript" src="./lib/jquery-3.3.1.min.js"></script>
+
+	<!-- amCharts javascript code -->
+	<script type="text/javascript" src="js/SetData.js"></script>
+	<script type="text/javascript" src="js/Process.js"></script>
+	<script type="text/javascript" src="js/Listener.js"></script>
+	<script type="text/javascript">
+		Listenter();
+	</script>
+</body>
+
+</html>

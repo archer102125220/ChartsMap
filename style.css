@@ -1,0 +1,74 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Microsoft JhengHei','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #424d5c;
+  color: #fff;
+}
+
+#map {
+  width: 100%;
+  height: 100vh;
+}
+
+#Title {
+  margin: 0;
+  position: absolute;
+  top: 2%;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.data-control {
+  margin: 0;
+  padding: 0 2rem;
+  position: absolute;
+  top: 15%;
+  right: 0%;
+  height: 500px;
+  width: 485px;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.data-control h2 {
+  line-height: 22px;
+}
+
+.data-control h2::after {
+  content: '：';
+}
+
+.data-control select {
+  font-family: 'Microsoft JhengHei','Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-size: 22px;
+}
+
+.data-control .data-color {
+  margin: .25rem 0;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  font-size: 1.25rem;
+  line-height: 20px;
+}
+
+.data-control .data-color span {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+}
+
+.data-control .data-color span[data-color='red'] {
+  background-color: #933f49;
+}
+
+.data-control .data-color span[data-color='yellow'] {
+  background-color: #bba537;
+}
+
+.data-control .data-color span[data-color='green'] {
+  background-color: #6ba660;
+}

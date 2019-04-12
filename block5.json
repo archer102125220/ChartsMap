@@ -1,0 +1,53 @@
+[
+  {
+    "item" : "單位規模小，無資訊化的必要",
+    "title" : "內部尚未資訊化的主要原因",
+    "Taipei" : "11",
+    "New Taipei" : "26",
+    "Taoyuan" : "10",
+    "Hsinchu" : "8",
+    "Miaoli" : "17",
+    "Taichung" : "16",
+    "Changhua" : "16",
+    "Yunlin" : "13",
+    "Tainan" : "16",
+    "Kaohsiung" : "19",
+    "Hualien" : "7",
+    "Taitung" : "8",
+    "Total" : "167"
+  },
+  {
+    "item" : "單位人力資源有限，無專業資訊人才",
+    "title" : "內部尚未資訊化的主要原因",
+    "Taipei" : "30",
+    "New Taipei" : "38",
+    "Taoyuan" : "16",
+    "Hsinchu" : "23",
+    "Miaoli" : "21",
+    "Taichung" : "28",
+    "Changhua" : "24",
+    "Yunlin" : "25",
+    "Tainan" : "12",
+    "Kaohsiung" : "40",
+    "Hualien" : "7",
+    "Taitung" : "18",
+    "Total" : "282"
+  },
+  {
+    "item" : "單位預算考量",
+    "title" : "內部尚未資訊化的主要原因",
+    "Taipei" : "39",
+    "New Taipei" : "64",
+    "Taoyuan" : "17",
+    "Hsinchu" : "23",
+    "Miaoli" : "18",
+    "Taichung" : "29",
+    "Changhua" : "26",
+    "Yunlin" : "36",
+    "Tainan" : "23",
+    "Kaohsiung" : "46",
+    "Hualien" : "10",
+    "Taitung" : "13",
+    "Total" : "344"
+  }
+]

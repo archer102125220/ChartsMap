@@ -28,7 +28,7 @@ body {
   position: absolute;
   top: 10.7%;
   right: 0%;
-  height: 400px;
+  height: 650px;
   width: 485px;
   background-color: rgba(0, 0, 0, .2);
 }
@@ -75,8 +75,8 @@ body {
 #container{
   margin: 0 auto;
   position: absolute;
-  top: 65%;
-  right: 5%;
+  top: 60%;
+  right: 1%;
   height: 255px;
   width: 485px;
 }

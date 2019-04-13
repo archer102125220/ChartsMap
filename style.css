@@ -72,11 +72,24 @@ body {
   background-color: #6ba660;
 }
 
-#container{
+#container,#bar,#pie{
   margin: 0 auto;
-  position: absolute;
-  top: 60%;
-  right: 1%;
+}
+#bar{
   height: 255px;
   width: 485px;
+}
+#pie{
+  height: 255px;
+  width: 400px;
+}
+
+#container{
+  width:889px;
+  position: absolute;
+  top: 60%;
+  right: 0.5%;
+}
+#container div{
+  display: inline-block;
 }

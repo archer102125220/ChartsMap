@@ -138,7 +138,7 @@ const Draw = (Lable, Selecter) => {
         }`;
     AmCharts.makeChart("map", JSON.parse(Parameter));
 
-    ChartsDarw('',SortData
+    ChartsDarw(document.querySelector("#Title").innerHTML,SortData
         .map((sd) => {
             return Object.values({ 0: ChineseCounty
                     .find((CC) => CC[0] == sd[0])[1],

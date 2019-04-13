@@ -73,7 +73,7 @@ const Draw = (Lable, Selecter) => {
             "dataProvider": {
                 "map": "taiwanLow",
                 "zoomLevel": 1.1,
-                "zoomLongitude": 123.5,
+                "zoomLongitude": 122,
                 "zoomLatitude": 23.8,
                 "getAreasFromMap": true,
                 "images": [

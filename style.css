@@ -80,3 +80,7 @@ body {
   height: 255px;
   width: 1000px;
 }
+
+#container{
+  width: 485px;
+}

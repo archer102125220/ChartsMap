@@ -69,30 +69,43 @@ const LableLongLatColor = [
 var Data = {};
 var ProcessData = [];
 var FilesName = [
-    ['block1.json','各地區與長照ABC單位綜合統計'],
-    ['block2.json','各地區長期照護服務統計表'],
-    ['block3.json','各地區以有資訊系統統計表'],
-    ['block4.json','是否知曉衛福部已建立「長照服務資料交換標準」'],
-    ['block5.json','內部尚未資訊化的主要原因'],
-    ['block6.json','未來願意投入資訊化的主要原因'],
-    ['block7.json','未來欲投入之內部資訊系統'],
-    ['block8.json','未來期望政府系統能提供哪些資訊科技的幫助'],
+    ['block1.json', '各地區與長照ABC單位綜合統計'],
+    ['block2.json', '各地區長期照護服務統計表'],
+    ['block3.json', '各地區以有資訊系統統計表'],
+    ['block4.json', '是否知曉衛福部已建立「長照服務資料交換標準」'],
+    ['block5.json', '內部尚未資訊化的主要原因'],
+    ['block6.json', '未來願意投入資訊化的主要原因'],
+    ['block7.json', '未來欲投入之內部資訊系統'],
+    ['block8.json', '未來期望政府系統能提供哪些資訊科技的幫助'],
 ]
+var ChineseCounty = [
+    ['Taipei','台北'],
+    ['New Taipei','新北'],
+    ['Taoyuan','桃園'],
+    ['Hsinchu','新竹'],
+    ['Miaoli','苗栗'],
+    ['Taichung','台中'],
+    ['Changhua','彰化'],
+    ['Yunlin','雲林'],
+    ['Tainan','台南'],
+    ['Kaohsiung','高雄'],
+    ['Hualien','花蓮'],
+    ['Taitung','台東']
+];
 FilesName.forEach((value, index) => {
     var NewOption = document.createElement("option");
     NewOption.text = value[1]
     NewOption.value = index;
     document.querySelector("#FileSelect").add(NewOption);
 });
-document.querySelector("#DataTag").addEventListener("change", async function (e) {
+document.querySelector("#DataTag").addEventListener("change", (e) => {
     Draw(LableLongLatColor, e.target.value);
 });
-document.querySelector("#FileSelect").addEventListener("change", async function (e) {
+document.querySelector("#FileSelect").addEventListener("change", (e) => {
     document.querySelector("#DataTag").innerHTML = '';
-    await Listenter();
+    Listenter();
 });
 const SetData = async (Files) => {
-    console.log(Files);
     Data = await fetch(FilesName[Files][0]).then(response => response.json());
     Data.forEach((value, key) => {
         ProcessData[key] = {};

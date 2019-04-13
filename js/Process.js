@@ -1,7 +1,7 @@
 const Draw = (Lable, Selecter) => {
     var Tage = Selecter;
     var SelectData = ProcessData.filter((value) => value.item == Tage);
-    var SortData = [], i = 0, count = 0, MaxIndex = 0, temp = [], TOP3 = [];
+    var SortData = [], i = 0;
     $.each(SelectData[0], (index, val) => {
         if (index != 'item' && index != "Total" && index != "title") {
             SortData[i] = [];
@@ -12,23 +12,10 @@ const Draw = (Lable, Selecter) => {
             document.querySelector('#Title').innerHTML = val;
         }
     });
+
     SelectData = Object.values(SelectData[0])
         .map((item, index, arr) => (index != 0 && index != 1 && index != arr.length - 1) ? item : 'NO')
         .filter(item => item != 'NO');
-    i = 1;
-    temp = SortData[0];
-    /*while (SortData.length > 0) {
-        while (temp[0][1] < SortData[i][1]) {
-            if (i > SortData.length) i = 0;
-            temp[0][1] = SortData[i][1];
-            MaxIndex=i;
-            i++;
-        }
-        TOP3[count] = temp;
-        count++;
-    }*/
-
-
     // TOP3 上色
     const AreasLable = SortData
         .map((sd) => { return { ...sd, 1: Number(sd[1]) } })
@@ -61,10 +48,10 @@ const Draw = (Lable, Selecter) => {
                         "labelFontSize": 20
                     }`;
     });
-    // console.log(ImagesLable)
+
     while (ImagesLable.indexOf('%sr') > 0) {
         if (j < SelectData.length) {
-            console.log(AreasLable.find(({ title }) => title === SelectData[j]));
+            //console.log(AreasLable.find(({ title }) => title === SelectData[j]));
             const locationLabel = AreasLable.find(({ title }) => title === SortData[j][0]);
             // ImagesLable = ImagesLable.replace('%sr', locationLabel ? locationLabel.title + ' ' + SelectData[j] : SelectData[j]);
             ImagesLable = ImagesLable.replace('%sr', SelectData[j]);
@@ -74,83 +61,6 @@ const Draw = (Lable, Selecter) => {
         }
     }
 
-    //rgba(155,155,155,0.8)
-    //rgba(17,146,114,0.8)
-    /*
-    ,
-                "areas": [
-                    {
-                        "id": "TW-NWT",
-                        "title": "New Taipei",
-                        "color": "rgba(25,210,164,0.8)"
-                    },
-                    {
-                        "id": "TW-HUA",
-                        "title": "Hualien",
-                        "color": "rgba(70,187,158,0.8)"
-                    },
-                    {
-                        "id": "TW-TPE",
-                        "title": "Taipei",
-                        "color": "rgba(27,255,198,0.8)"
-                    },
-                    {
-                        "id": "TW-TAO",
-                        "title": "Taoyuan",
-                        "color": "rgba(33,199,158,0.8)"
-                    },
-                    {
-                        "id": "TW-HSZ",
-                        "title": "Hsinchu",
-                        "color": "rgba(59,208,171,0.8)"
-                    },
-                    {
-                        "id": "TW-HSQ",
-                        "title": "Hsinchu",
-                        "color": "rgba(30,201,159,0.8)"
-                    },
-                    {
-                        "id": "TW-MIA",
-                        "title": "Miaoli",
-                        "color": "rgba(16,184,142,0.8)"
-                    },
-                    {
-                        "id": "TW-ILA",
-                        "title": "Yilan",
-                        "color": "rgba(17,146,114,0.8)"
-                    },
-                    {
-                        "id": "TW-TXG",
-                        "title": "Taichung",
-                        "color": "rgba(17,146,114,0.8)"
-                    },
-                    {
-                        "id": "TW-CHA",
-                        "title": "Changhua",
-                        "color": "rgba(17,146,114,0.8)"
-                    },
-                    {
-                        "id": "TW-YUN",
-                        "title": "Yunlin",
-                        "color": "rgba(17,146,114,0.8)"
-                    },
-                    {
-                        "id": "TW-TNN",
-                        "title": "Tainan",
-                        "color": "rgba(80,224,188,0.8)"
-                    },
-                    {
-                        "id": "TW-KHH",
-                        "title": "Kaohsiung",
-                        "color": "rgba(75,210,176,0.8)"
-                    },
-                    {
-                        "id": "TW-TTT",
-                        "title": "Taitung",
-                        "color": "rgba(39,199,160,0.8)"
-                    }
-                ]
-    */
     var Parameter = `{
             "type": "map",
             "pathToImages": "http://www.amcharts.com/lib/3/images/",
@@ -163,7 +73,7 @@ const Draw = (Lable, Selecter) => {
             "dataProvider": {
                 "map": "taiwanLow",
                 "zoomLevel": 1.1,
-                "zoomLongitude": 121,
+                "zoomLongitude": 123.5,
                 "zoomLatitude": 23.8,
                 "getAreasFromMap": true,
                 "images": [
@@ -227,6 +137,15 @@ const Draw = (Lable, Selecter) => {
             }
         }`;
     AmCharts.makeChart("map", JSON.parse(Parameter));
+
+    ChartsDarw('',SortData
+        .map((sd) => {
+            return Object.values({ 0: ChineseCounty
+                    .find((CC) => CC[0] == sd[0])[1],
+                    1:Number(sd[1],
+                        )
+            });
+        }));
 }
 
 // 查表用

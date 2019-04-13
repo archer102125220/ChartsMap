@@ -26,9 +26,9 @@ body {
   margin: 0;
   padding: 0 2rem;
   position: absolute;
-  top: 15%;
+  top: 10.7%;
   right: 0%;
-  height: 500px;
+  height: 400px;
   width: 485px;
   background-color: rgba(0, 0, 0, .2);
 }
@@ -48,7 +48,6 @@ body {
 
 .data-control .data-color {
   margin: .25rem 0;
-  display: flex;
   align-items: center;
   height: 30px;
   font-size: 1.25rem;
@@ -71,4 +70,13 @@ body {
 
 .data-control .data-color span[data-color='green'] {
   background-color: #6ba660;
+}
+
+#container{
+  margin: 0 auto;
+  position: absolute;
+  top: 65%;
+  right: 5%;
+  height: 255px;
+  width: 1000px;
 }

@@ -98,13 +98,6 @@ FilesName.forEach((value, index) => {
     NewOption.value = index;
     document.querySelector("#FileSelect").add(NewOption);
 });
-document.querySelector("#DataTag").addEventListener("change", (e) => {
-    Draw(LableLongLatColor, e.target.value);
-});
-document.querySelector("#FileSelect").addEventListener("change", (e) => {
-    document.querySelector("#DataTag").innerHTML = '';
-    Listenter();
-});
 const SetData = async (Files) => {
     Data = await fetch(FilesName[Files][0]).then(response => response.json());
     Data.forEach((value, key) => {

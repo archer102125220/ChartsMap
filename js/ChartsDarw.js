@@ -1,4 +1,4 @@
-const ChartsDarw = (text, data) => {
+const ChartsDarw = (text, data, color, name) => {
     Highcharts.chart('bar', {
         chart: {
             type: 'column'
@@ -34,8 +34,7 @@ const ChartsDarw = (text, data) => {
             pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
         },*/
         series: [{
-            /*
-            name: 'Population',*/
+            name,
             data,
             dataLabels: {
                 enabled: true,
@@ -50,14 +49,20 @@ const ChartsDarw = (text, data) => {
                 }
             }
         }]
-    });    
-    data = data.map((value, index) => {
-        return {
-            'name': value[0],
-            'y': value[1]
-        }
     });
 
+
+    data = data.map((value) => {
+        console.log(color.find((cl) => value[0] === cl[0]));
+        return {
+            'name': value[0],
+            'y': value[1],
+            'color': (color.find((cl) => value[0] === cl[0])==undefined) ?
+                '' :
+                color.find((cl) => value[0] === cl[0])[3]
+        }
+    });
+    console.log(data);
     // Build the chart
     Highcharts.chart('pie', {
         chart: {
@@ -87,7 +92,7 @@ const ChartsDarw = (text, data) => {
             }
         },
         series: [{
-            name: 'Share',
+            name,
             data
         }]
     });

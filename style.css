@@ -92,12 +92,13 @@ body {
 }
 
 #container {
+  padding: .5rem 0 0 0;
   width: 485px;
-  height: 540px;
+  height: 532px;
   position: absolute;
   top: 17%;
-  right: 35.8%;
-  background-color: rgba(0, 0, 0, .2);
+  right: 550px;
+  background-color: rgba(0, 0, 0, .2);/*width: 485px;*/
 }
 
 #container div {

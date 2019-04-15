@@ -34,7 +34,6 @@ const Draw = (Lable, Selecter) => {
         });
     // End 上色
 
-
     // 各地區標籤
     var ImagesLable = '', j = 0;
     Lable.forEach((val) => {
@@ -140,14 +139,21 @@ const Draw = (Lable, Selecter) => {
         }`;
     AmCharts.makeChart("map", JSON.parse(Parameter));
 
-    ChartsDarw(document.querySelector("#Title").innerHTML,SortData
+    ChartsDarw(document.querySelector("#Title").innerHTML, SortData
         .map((sd) => {
-            return Object.values({ 0: ChineseCounty
+            return Object.values({
+                0: ChineseCounty
                     .find((CC) => CC[0] == sd[0])[1],
-                    1:Number(sd[1],
-                        )
+                1: Number(sd[1])
             });
-        }));
+        }), AreasLable.map((al) => {
+            
+            return Object.values({
+                ...al,
+                0: ChineseCounty
+                    .find((CC) => CC[0] == al.title)[1]
+            });
+        }), Selecter);
 }
 
 // 查表用

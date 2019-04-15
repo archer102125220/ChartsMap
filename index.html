@@ -12,6 +12,7 @@
 <body>
 	<div id="map"></div>
 	<h1 id="Title"></h1>
+	<div class="control-container"></div>
 	<div class="data-control">
 		<h1>統計類型選擇與說明</h1>
 		<hr />
@@ -20,19 +21,16 @@
 		<h2>項目</h2>
 		<select id="DataTag"></select>
 		<h2>圖色</h2>
-		<span class="data-color"><span data-color="red"></span>　第一名&nbsp;&nbsp;</span>
-		<span class="data-color"><span data-color="yellow"></span>　第二名&nbsp;&nbsp;</span>
-		<span class="data-color"><span data-color="green"></span>　第三名&nbsp;&nbsp;</span>
+		<div class="data-color"><span data-color="red"></span>　第一名</div>
+		<div class="data-color"><span data-color="yellow"></span>　第二名</div>
+		<div class="data-color"><span data-color="green"></span>　第三名</div>
+		<div class="data-color"><span data-color="bule"></span>　第四名</div>
+		<div class="data-color"><span data-color="purple"></span>　第五名</div>
 	</div>
 	<div id="container">
-		<ul>
-			<li><a id="tab-1" href="#" show-block="#bar" hidden-block="#pie">長條圖</a></li>
-			<li><a id="tab-2" href="#" show-block="#pie" hidden-block="#bar">圓餅圖</a></li>
-		</ul>
+		<div id="pie"></div>
 		<div id="bar"></div>
-		<div id="pie" style="display:none"></div>
 	</div>
-
 
 	<!-- amCharts javascript sources -->
 	<script type="text/javascript" src="./lib/ammap.js"></script>

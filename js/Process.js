@@ -20,13 +20,15 @@ const Draw = (Lable, Selecter) => {
     const AreasLable = SortData
         .map((sd) => { return { ...sd, 1: Number(sd[1]) } })
         .sort((a, b) => b[1] - a[1])
-        .slice(0, 3)
+        .slice(0, 5)
         .map(sd => ARAE_KEY.find(({ title }) => sd[0] === title))
         .map((sd, index) => {
             switch (index) {
                 case 0: sd.color = 'rgba(228, 50, 54, .5)'; break;    // 紅
                 case 1: sd.color = 'rgba(218, 188, 46, .8)'; break;     // 黃
                 case 2: sd.color = 'rgba(148, 255, 100, .5)'; break;   // 綠
+                case 3: sd.color = 'rgba(50, 62, 228, 0.5)'; break;   //藍
+                case 4: sd.color = 'rgba(228, 50, 204, 0.5)'; break;   //紫色
             }
             return sd;
         });
@@ -73,7 +75,7 @@ const Draw = (Lable, Selecter) => {
             "dataProvider": {
                 "map": "taiwanLow",
                 "zoomLevel": 1.1,
-                "zoomLongitude": 122,
+                "zoomLongitude": 123.7,
                 "zoomLatitude": 23.8,
                 "getAreasFromMap": true,
                 "images": [

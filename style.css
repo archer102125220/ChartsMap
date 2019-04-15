@@ -26,9 +26,9 @@ body {
   margin: 0;
   padding: 0 2rem;
   position: absolute;
-  top: 10.7%;
+  top: 17%;
   right: 0%;
-  height: 668px;
+  height: 540px;
   width: 485px;
   background-color: rgba(0, 0, 0, .2);
 }
@@ -48,6 +48,7 @@ body {
 
 .data-control .data-color {
   margin: .25rem 0;
+  display: flex;
   align-items: center;
   height: 30px;
   font-size: 1.25rem;
@@ -72,6 +73,15 @@ body {
   background-color: #6ba660;
 }
 
+.data-control .data-color span[data-color='bule'] {
+  background-color: #323ee480;
+}
+
+.data-control .data-color span[data-color='purple'] {
+  background-color: #e432cc80;
+}
+
+
 #container, #bar, #pie {
   margin: 0 auto;
 }
@@ -82,10 +92,12 @@ body {
 }
 
 #container {
-
+  width: 485px;
+  height: 540px;
   position: absolute;
-  top: 60%;
-  right: 0.5%;
+  top: 17%;
+  right: 35.8%;
+  background-color: rgba(0, 0, 0, .2);
 }
 
 #container div {
@@ -112,3 +124,12 @@ body {
   padding: 10px;
   margin-left: 5px;
 }
+
+/*.control-container{
+  position: absolute;
+  top: 17%;
+  right: 0%;
+  height: 540px;
+  width: 1015px;
+  background-color: rgba(0, 0, 0, .2);
+}*/

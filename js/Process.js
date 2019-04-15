@@ -146,8 +146,9 @@ const Draw = (Lable, Selecter) => {
                     .find((CC) => CC[0] == sd[0])[1],
                 1: Number(sd[1])
             });
-        }), AreasLable.map((al) => {
-            
+        })
+        .sort((a, b) => b[1] - a[1]), AreasLable.map((al) => {
+
             return Object.values({
                 ...al,
                 0: ChineseCounty

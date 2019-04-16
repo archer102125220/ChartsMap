@@ -61,7 +61,7 @@ const ChartsDarw = (text, data, color, name) => {
                 color.find((cl) => value[0] === cl[0])[3]
         }
     });
-
+    
     // Build the chart
     Highcharts.chart('pie', {
         chart: {

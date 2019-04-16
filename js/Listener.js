@@ -1,6 +1,6 @@
 const Listenter = async () => {
     await SetData(document.querySelector("#FileSelect").value);
-    Data.sort((a, b) => b.Total - a.Total);
+    Data.sort((a, b) => b.Total - a.Total);//
     Data.forEach((value) => {
         var NewOption = document.createElement("option");
         NewOption.text = value.item;

@@ -79,9 +79,9 @@ const Draw = (Lable, Selecter) => {
         "backgroundColor": "#424D5c",
         "dataProvider": {
             "map": "taiwanLow",
-            "zoomLevel": 1.355,
+            "zoomLevel": 1.21,
             "zoomLongitude": 122.89,
-            "zoomLatitude": 23.99,
+            "zoomLatitude": 23.78,
             "getAreasFromMap": true,
             "images": [
                 {
@@ -132,7 +132,7 @@ const Draw = (Lable, Selecter) => {
             "zoomControlEnabled": true,
             "homeButtonEnabled": true,
             "panControlEnabled": true,
-            "left": 50,
+            "left": 20,
             "top": 150,
             "minZoomLevel": 0.15,
             "gridHeight": 150,
@@ -144,7 +144,7 @@ const Draw = (Lable, Selecter) => {
         }
     }`));
 
-    ChartsDarw(document.querySelector("#Title").innerHTML, SortData
+    ChartsDarw('', SortData
         .map((sd) => {
             return {
                 'name': ChineseCounty

@@ -18,23 +18,27 @@ body {
   top: 2%;
   width: 100%;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #fff;
 }
 
 .data-control {
   margin: 0;
-  padding: 0 2rem 0 1rem;
+  padding: 0 0 0 1rem;
   position: absolute;
   top: 17%;
   right: 0%;
-  height: 540px;
-  width: 400px;
+  height: 560px;
+  width: 800px;
   background-color: rgba(0, 0, 0, .2);
 }
 
+.data-control h1 {
+  font-size: 1.6rem;
+}
+
 .data-control h2 {
-  line-height: 18px;
+  line-height: 15px;
 }
 
 .data-control h2::after {
@@ -43,23 +47,28 @@ body {
 
 .data-control select {
   font-family: 'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .data-control .data-color {
   margin: .25rem 0;
-  display: flex;
   align-items: center;
   height: 30px;
-  font-size: 1.20rem;
-  line-height: 18px;
+  font-size: 15px;
+  line-height: 15px;
 }
 
 .data-control .data-color span {
+  padding: 0;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
   display: inline-block;
   height: 25px;
   width: 25px;
 }
+
+
 
 .data-control .data-color span[data-color='red'] {
   background-color: #933f49;
@@ -81,26 +90,28 @@ body {
   background-color: #e432cc80;
 }
 
-
-#container, #bar, #pie {
-  margin: 0 auto;
+#pie {
+  height: 255px;
+  width: 440px;
 }
 
-#bar,#pie {
-  height: 255px;
-  width: 485px;
+#bar {
+  height: 260px;
+  width: 800px;
 }
 
 #container {
   padding: .5rem 0 0 0;
-  width: 485px;
-  height: 532px;
-  position: absolute;
-  top: 17%;
-  right: 450px;
-  background-color: rgba(0, 0, 0, .2);/*width: 400px;*/
 }
 
 #container div {
+  display: inline-block;
+}
+
+#control{
+  width: 350px;
+}
+
+.data-control > div{
   display: inline-block;
 }

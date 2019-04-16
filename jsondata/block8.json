@@ -1,0 +1,53 @@
+[
+  {
+    "item" : "分類A",
+    "title" : "未來期望政府系統能提供哪些資訊科技的幫助",
+    "Taipei" : "1",
+    "New Taipei" : "5",
+    "Taoyuan" : "4",
+    "Hsinchu" : "8",
+    "Miaoli" : "2",
+    "Taichung" : "5",
+    "Changhua" : "1",
+    "Yunlin" : "8",
+    "Tainan" : "4",
+    "Kaohsiung" : "5",
+    "Hualien" : "2",
+    "Taitung" : "2",
+    "Total" : "47"
+  },
+  {
+    "item" : "分類B",
+    "title" : "未來期望政府系統能提供哪些資訊科技的幫助",
+    "Taipei" : "2",
+    "New Taipei" : "1",
+    "Taoyuan" : "0",
+    "Hsinchu" : "0",
+    "Miaoli" : "0",
+    "Taichung" : "0",
+    "Changhua" : "0",
+    "Yunlin" : "0",
+    "Tainan" : "0",
+    "Kaohsiung" : "0",
+    "Hualien" : "0",
+    "Taitung" : "1",
+    "Total" : "4"
+  },
+  {
+    "item" : "分類C",
+    "title" : "未來期望政府系統能提供哪些資訊科技的幫助",
+    "Taipei" : "6",
+    "New Taipei" : "10",
+    "Taoyuan" : "3",
+    "Hsinchu" : "0",
+    "Miaoli" : "2",
+    "Taichung" : "8",
+    "Changhua" : "4",
+    "Yunlin" : "3",
+    "Tainan" : "3",
+    "Kaohsiung" : "1",
+    "Hualien" : "1",
+    "Taitung" : "2",
+    "Total" : "43"
+  }
+]

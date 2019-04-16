@@ -66,19 +66,20 @@ const LableLongLatColor = [
         "%sr NO22", 119.9874, 26.2811, "inside", "rgba(255,0,156,0.8)", "rgba(255,0,156,0.8)", 20
     ]*/
 ]
-var Data = {};
-var ProcessData = [];
-var FilesName = [
-    ['block1.json', '各地區與長照ABC單位綜合統計'],
-    ['block2.json', '各地區長期照護服務統計表'],
-    ['block3.json', '各地區以有資訊系統統計表'],
-    ['block4.json', '是否知曉衛福部已建立「長照服務資料交換標準」'],
-    ['block5.json', '內部尚未資訊化的主要原因'],
-    ['block6.json', '未來願意投入資訊化的主要原因'],
-    ['block7.json', '未來欲投入之內部資訊系統'],
-    ['block8.json', '未來期望政府系統能提供哪些資訊科技的幫助'],
+let Data = {};
+let ProcessData = [];
+const FilesName = [
+    ['./jsondata/block1.json', '各地區與長照ABC單位綜合統計'],
+    ['./jsondata/block2.json', '各地區長期照護服務統計表'],
+    ['./jsondata/block3.json', '各地區以有資訊系統統計表'],
+    ['./jsondata/block4.json', '是否知曉衛福部已建立「長照服務資料交換標準」'],
+    ['./jsondata/block5.json', '內部尚未資訊化的主要原因'],
+    ['./jsondata/block6.json', '未來願意投入資訊化的主要原因'],
+    ['./jsondata/block7.json', '未來欲投入之內部資訊系統'],
+    ['./jsondata/block8.json', '未來期望政府系統能提供哪些資訊科技的幫助'],
 ]
-var ChineseCounty = [
+
+const ChineseCounty = [
     ['Taipei','台北'],
     ['New Taipei','新北'],
     ['Taoyuan','桃園'],
@@ -93,7 +94,7 @@ var ChineseCounty = [
     ['Taitung','台東']
 ];
 FilesName.forEach((value, index) => {
-    var NewOption = document.createElement("option");
+    let NewOption = document.createElement("option");
     NewOption.text = value[1]
     NewOption.value = index;
     document.querySelector("#FileSelect").add(NewOption);

@@ -1,21 +1,19 @@
 const Draw = (Lable, Selecter) => {
-    var Tage = Selecter;
-    var SelectData = ProcessData.filter((value) => value.item == Tage);
-    var SortData = [], i = 0;
+    let SelectData = ProcessData.filter((value) => value.item == Selecter);
+    let SortData = [], i = 0;
     $.each(SelectData[0], (index, val) => {
         if (index != 'item' && index != "Total" && index != "title") {
             SortData[i] = [];
-            SortData[i][0] = index
+            SortData[i][0] = index;
             SortData[i][1] = val.replace(/\%/, '');
             i++;
-        } else if (index == "title") {
-            document.querySelector('#Title').innerHTML = val;
         }
     });
 
     SelectData = Object.values(SelectData[0])
         .map((item, index, arr) => (index != 0 && index != 1 && index != arr.length - 1) ? item : 'NO')
         .filter(item => item != 'NO');
+
     // TOP3 上色
     const AreasLable = SortData
         .map((sd) => { return { ...sd, 1: Number(sd[1]) } })
@@ -41,7 +39,7 @@ const Draw = (Lable, Selecter) => {
     // End 上色
 
     // 各地區標籤
-    var ImagesLable = '', j = 0;
+    let ImagesLable = '', j = 0;
     Lable.forEach((val) => {
         ImagesLable += `,
                     {
@@ -68,92 +66,91 @@ const Draw = (Lable, Selecter) => {
         }
     }
 
-    var Parameter = `{
-            "type": "map",
-            "pathToImages": "http://www.amcharts.com/lib/3/images/",
-            "addClassNames": true,
-            "fontSize": 18,
-            "color": "#fff",
-            "projection": "mercator",
-            "backgroundAlpha": 2,
-            "backgroundColor": "#424D5c",
-            "dataProvider": {
-                "map": "taiwanLow",
-                "zoomLevel": 1.355,
-                "zoomLongitude": 123.16,
-                "zoomLatitude": 23.95,
-                "getAreasFromMap": true,
-                "images": [
-                    {
-                        "top": 40,
-                        "left": 60,
-                        "width": 80,
-                        "height": 40,
-                        "pixelMapperLogo": true,
-                        "imageURL": "",
-                        "url": ""
-                    }${ImagesLable}
-                ],
-                "areas": ${JSON.stringify(AreasLable)}
-            },
-            "balloon": {
-                "horizontalPadding": 15,
-                "borderAlpha": 0,
-                "borderThickness": 1,
-                "verticalPadding": 15
-            },
-            "areasSettings": {
-                "color": "rgba(97, 133, 111, .5)",
-                "outlineColor": "rgba(204 ,234, 247, .5)",
-                "rollOverOutlineColor": "rgba(80, 80, 80, .5)",
-                "rollOverBrightness": 11,
-                "selectedBrightness": 30,
-                "selectable": true,
-                "unlistedAreasAlpha": 0,
-                "unlistedAreasOutlineAlpha": 0
-            },
-            "imagesSettings": {
-                "alpha": 1,
-                "color": "rgb(187, 187, 187)",
-                "outlineAlpha": 0,
-                "rollOverOutlineAlpha": 0,
-                "outlineColor": "rgba(80,80,80,1)",
-                "rollOverBrightness": 20,
-                "selectedBrightness": 20,
-                "selectable": true
-            },
-            "linesSettings": {
-                "color": "rgb(187, 187, 187)",
-                "selectable": true,
-                "rollOverBrightness": 20,
-                "selectedBrightness": 20
-            },
-            "zoomControl": {
-                "zoomControlEnabled": true,
-                "homeButtonEnabled": true,
-                "panControlEnabled": true,
-                "left": 50,
-                "top": 150,
-                "minZoomLevel": 0.15,
-                "gridHeight": 150,
-                "gridAlpha": 0.4,
-                "gridBackgroundAlpha": 0,
-                "gridColor": "#fff",
-                "draggerAlpha": 1,
-                "buttonCornerRadius": 2
-            }
-        }`;
-    AmCharts.makeChart("map", JSON.parse(Parameter));
+    AmCharts.makeChart("map", JSON.parse(`{
+        "type": "map",
+        "pathToImages": "http://www.amcharts.com/lib/3/images/",
+        "addClassNames": true,
+        "fontSize": 18,
+        "color": "#fff",
+        "projection": "mercator",
+        "backgroundAlpha": 2,
+        "backgroundColor": "#424D5c",
+        "dataProvider": {
+            "map": "taiwanLow",
+            "zoomLevel": 1.355,
+            "zoomLongitude": 123.16,
+            "zoomLatitude": 23.95,
+            "getAreasFromMap": true,
+            "images": [
+                {
+                    "top": 40,
+                    "left": 60,
+                    "width": 80,
+                    "height": 40,
+                    "pixelMapperLogo": true,
+                    "imageURL": "",
+                    "url": ""
+                }${ImagesLable}
+            ],
+            "areas": ${JSON.stringify(AreasLable)}
+        },
+        "balloon": {
+            "horizontalPadding": 15,
+            "borderAlpha": 0,
+            "borderThickness": 1,
+            "verticalPadding": 15
+        },
+        "areasSettings": {
+            "color": "rgba(97, 133, 111, .5)",
+            "outlineColor": "rgba(204 ,234, 247, .5)",
+            "rollOverOutlineColor": "rgba(80, 80, 80, .5)",
+            "rollOverBrightness": 11,
+            "selectedBrightness": 30,
+            "selectable": true,
+            "unlistedAreasAlpha": 0,
+            "unlistedAreasOutlineAlpha": 0
+        },
+        "imagesSettings": {
+            "alpha": 1,
+            "color": "rgb(187, 187, 187)",
+            "outlineAlpha": 0,
+            "rollOverOutlineAlpha": 0,
+            "outlineColor": "rgba(80,80,80,1)",
+            "rollOverBrightness": 20,
+            "selectedBrightness": 20,
+            "selectable": true
+        },
+        "linesSettings": {
+            "color": "rgb(187, 187, 187)",
+            "selectable": true,
+            "rollOverBrightness": 20,
+            "selectedBrightness": 20
+        },
+        "zoomControl": {
+            "zoomControlEnabled": true,
+            "homeButtonEnabled": true,
+            "panControlEnabled": true,
+            "left": 50,
+            "top": 150,
+            "minZoomLevel": 0.15,
+            "gridHeight": 150,
+            "gridAlpha": 0.4,
+            "gridBackgroundAlpha": 0,
+            "gridColor": "#fff",
+            "draggerAlpha": 1,
+            "buttonCornerRadius": 2
+        }
+    }`));
 
     ChartsDarw(document.querySelector("#Title").innerHTML, SortData
         .map((sd) => {
-            return Object.values({
-                0: ChineseCounty
+            return {
+                'name': ChineseCounty
                     .find((CC) => CC[0] == sd[0])[1],
-                1: Number(sd[1])
-            });
+                'y': Number(sd[1])
+            };
         })
-        .sort((a, b) => b[1] - a[1]), AreasLable
+        .sort((a, b) => b.y - a.y), AreasLable
             .map((al) => {
                 return Object.values({
                     ...al,

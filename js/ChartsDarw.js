@@ -41,7 +41,7 @@ const ChartsDarw = (text, data, color, name) => {
                 rotation: -90,
                 color: '#FFFFFF',
                 align: 'right',
-                format: '{point.y:.1f}', // one decimal
+                format: '{point.y:.1f}%', // one decimal
                 y: 10, // 10 pixels down from the top
                 style: {
                     fontSize: '13px',
@@ -54,14 +54,13 @@ const ChartsDarw = (text, data, color, name) => {
 
     data = data.map((value) => {
         return {
-            'name': value[0],
-            'y': value[1],
-            'color': (color.find((cl) => value[0] === cl[0])==undefined) ?
+            ...value,
+            'color': ((color.find((cl) => value.name === cl[0]) == undefined) ?
                 '' :
-                color.find((cl) => value[0] === cl[0])[3]
+                color.find((cl) => value.name === cl[0])[3])
         }
     });
-    
+
     // Build the chart
     Highcharts.chart('pie', {
         chart: {
@@ -83,9 +82,10 @@ const ChartsDarw = (text, data, color, name) => {
                 dataLabels: {
                     enabled: true,
                     format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                    style: {
+                    /*style: {
                         color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                    },
+                        //,fontSize:'11px' 
+                    },*/
                     connectorColor: 'silver'
                 }
             }

@@ -48,7 +48,8 @@ const ChartsDarw = (text, data, color, name) => {
                     fontFamily: 'Verdana, sans-serif'
                 }
             }
-        }]
+        }],
+        exporting: { enabled: false }
     });
 
 
@@ -93,6 +94,7 @@ const ChartsDarw = (text, data, color, name) => {
         series: [{
             name,
             data
-        }]
+        }],
+        exporting: { enabled: false }
     });
 }

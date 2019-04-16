@@ -79,9 +79,9 @@ const Draw = (Lable, Selecter) => {
         "backgroundColor": "#424D5c",
         "dataProvider": {
             "map": "taiwanLow",
-            "zoomLevel": 1.355,
-            "zoomLongitude": 123,
-            "zoomLatitude": 23.99,
+            "zoomLevel": 1.55,
+            "zoomLongitude": 122.78,
+            "zoomLatitude": 24.18,
             "getAreasFromMap": true,
             "images": [
                 {

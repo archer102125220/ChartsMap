@@ -53,7 +53,6 @@ const ChartsDarw = (text, data, color, name) => {
 
 
     data = data.map((value) => {
-        console.log(color.find((cl) => value[0] === cl[0]));
         return {
             'name': value[0],
             'y': value[1],
@@ -62,7 +61,7 @@ const ChartsDarw = (text, data, color, name) => {
                 color.find((cl) => value[0] === cl[0])[3]
         }
     });
-    console.log(data);
+
     // Build the chart
     Highcharts.chart('pie', {
         chart: {

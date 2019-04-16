@@ -21,14 +21,20 @@ const Draw = (Lable, Selecter) => {
         .map((sd) => { return { ...sd, 1: Number(sd[1]) } })
         .sort((a, b) => b[1] - a[1])
         .slice(0, 5)
-        .map(sd => ARAE_KEY.find(({ title }) => sd[0] === title))
+        .map(sd => {
+            return { ...ARAE_KEY.find(({ title }) => sd[0] === title), Total: sd[1] }
+        })
         .map((sd, index) => {
-            switch (index) {
-                case 0: sd.color = 'rgba(228, 50, 54, .5)'; break;    // 紅
-                case 1: sd.color = 'rgba(218, 188, 46, .8)'; break;     // 黃
-                case 2: sd.color = 'rgba(148, 255, 100, .5)'; break;   // 綠
-                case 3: sd.color = 'rgba(50, 62, 228, 0.5)'; break;   //藍
-                case 4: sd.color = 'rgba(228, 50, 204, 0.5)'; break;   //紫色
+            if(sd.Total>0){
+                switch (index) {
+                    case 0: sd.color = 'rgba(228, 50, 54, .5)'; break;    // 紅
+                    case 1: sd.color = 'rgba(218, 188, 46, .8)'; break;     // 黃
+                    case 2: sd.color = 'rgba(148, 255, 100, .5)'; break;   // 綠
+                    case 3: sd.color = 'rgba(50, 62, 228, 0.5)'; break;   //藍
+                    case 4: sd.color = 'rgba(228, 50, 204, 0.5)'; break;   //紫色
+                }
+            }else{
+                sd.color = 'rgba(97, 133, 111, .5)';
             }
             return sd;
         });

@@ -19,7 +19,6 @@ body {
   width: 100%;
   text-align: center;
   font-size: 3rem;
-  /*color:rgba(97, 133, 111, .5);*/
   color: #fff;
 }
 
@@ -30,12 +29,12 @@ body {
   top: 17%;
   right: 0%;
   height: 540px;
-  width: 485px;
+  width: 460px;
   background-color: rgba(0, 0, 0, .2);
 }
 
 .data-control h2 {
-  line-height: 22px;
+  line-height: 21px;
 }
 
 .data-control h2::after {
@@ -44,7 +43,7 @@ body {
 
 .data-control select {
   font-family: 'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-  font-size: 22px;
+  font-size: 21px;
 }
 
 .data-control .data-color {
@@ -52,8 +51,8 @@ body {
   display: flex;
   align-items: center;
   height: 30px;
-  font-size: 1.25rem;
-  line-height: 20px;
+  font-size: 1.21rem;
+  line-height: 21px;
 }
 
 .data-control .data-color span {
@@ -98,40 +97,10 @@ body {
   height: 532px;
   position: absolute;
   top: 17%;
-  right: 550px;
+  right: 525px;
   background-color: rgba(0, 0, 0, .2);/*width: 485px;*/
 }
 
 #container div {
   display: inline-block;
 }
-
-
-#container>ul {
-  overflow: hidden;
-  width: 485px;
-  margin: 0;
-  padding: 0;
-}
-
-#container>ul>li {
-  list-style-type: none;
-}
-
-#container>ul>li>a {
-  text-decoration: none;
-  font-size: 17px;
-  color: #FFF;
-  float: left;
-  padding: 10px;
-  margin-left: 5px;
-}
-
-/*.control-container{
-  position: absolute;
-  top: 17%;
-  right: 0%;
-  height: 540px;
-  width: 1015px;
-  background-color: rgba(0, 0, 0, .2);
-}*/

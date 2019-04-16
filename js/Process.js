@@ -25,7 +25,7 @@ const Draw = (Lable, Selecter) => {
             return { ...ARAE_KEY.find(({ title }) => sd[0] === title), Total: sd[1] }
         })
         .map((sd, index) => {
-            if(sd.Total>0){
+            if (sd.Total > 0) {
                 switch (index) {
                     case 0: sd.color = 'rgba(228, 50, 54, .5)'; break;    // 紅
                     case 1: sd.color = 'rgba(218, 188, 46, .8)'; break;     // 黃
@@ -33,7 +33,7 @@ const Draw = (Lable, Selecter) => {
                     case 3: sd.color = 'rgba(50, 62, 228, 0.5)'; break;   //藍
                     case 4: sd.color = 'rgba(228, 50, 204, 0.5)'; break;   //紫色
                 }
-            }else{
+            } else {
                 sd.color = 'rgba(97, 133, 111, .5)';
             }
             return sd;
@@ -79,9 +79,9 @@ const Draw = (Lable, Selecter) => {
             "backgroundColor": "#424D5c",
             "dataProvider": {
                 "map": "taiwanLow",
-                "zoomLevel": 1.1,
-                "zoomLongitude": 123.7,
-                "zoomLatitude": 23.8,
+                "zoomLevel": 1.3,
+                "zoomLongitude": 123.21,
+                "zoomLatitude": 23.95,
                 "getAreasFromMap": true,
                 "images": [
                     {
@@ -153,14 +153,14 @@ const Draw = (Lable, Selecter) => {
                 1: Number(sd[1])
             });
         })
-        .sort((a, b) => b[1] - a[1]), AreasLable.map((al) => {
-
-            return Object.values({
-                ...al,
-                0: ChineseCounty
-                    .find((CC) => CC[0] == al.title)[1]
-            });
-        }), Selecter);
+        .sort((a, b) => b[1] - a[1]), AreasLable
+            .map((al) => {
+                return Object.values({
+                    ...al,
+                    0: ChineseCounty
+                        .find((CC) => CC[0] == al.title)[1]
+                });
+            }), Selecter);
 }
 
 // 查表用

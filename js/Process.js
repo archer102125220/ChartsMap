@@ -65,7 +65,9 @@ const Draw = (Lable, Selecter) => {
             ImagesLable = ImagesLable.replace(/\%sr/, '');
         }
     }
-
+/*"zoomLevel": 1.59,
+            "zoomLongitude": 122.79,
+            "zoomLatitude": 24.18, */
     AmCharts.makeChart("map", JSON.parse(`{
         "type": "map",
         "pathToImages": "http://www.amcharts.com/lib/3/images/",
@@ -78,8 +80,8 @@ const Draw = (Lable, Selecter) => {
         "dataProvider": {
             "map": "taiwanLow",
             "zoomLevel": 1.355,
-            "zoomLongitude": 123.16,
-            "zoomLatitude": 23.95,
+            "zoomLongitude": 123,
+            "zoomLatitude": 23.99,
             "getAreasFromMap": true,
             "images": [
                 {

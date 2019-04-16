@@ -1,10 +1,14 @@
 const ChartsDarw = (text, data, color, name) => {
+    const fontFamily="'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
     Highcharts.chart('bar', {
         chart: {
             type: 'column'
         },
         title: {
-            text
+            text,
+            style: {
+                fontFamily 
+            }
         },
         /*
         subtitle: {
@@ -16,7 +20,7 @@ const ChartsDarw = (text, data, color, name) => {
                 rotation: -45,
                 style: {
                     fontSize: '13px',
-                    fontFamily: 'Verdana, sans-serif'
+                    fontFamily
                 }
             }
         },
@@ -45,7 +49,7 @@ const ChartsDarw = (text, data, color, name) => {
                 y: 10, // 10 pixels down from the top
                 style: {
                     fontSize: '13px',
-                    fontFamily: 'Verdana, sans-serif'
+                    fontFamily
                 }
             }
         }],
@@ -71,7 +75,10 @@ const ChartsDarw = (text, data, color, name) => {
             type: 'pie'
         },
         title: {
-            text
+            text,
+            style: {
+                fontFamily
+            }
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -83,17 +90,19 @@ const ChartsDarw = (text, data, color, name) => {
                 dataLabels: {
                     enabled: true,
                     format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                    /*style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                        //,fontSize:'11px' 
-                    },*/
+                    style: {
+                        fontFamily
+                    },
                     connectorColor: 'silver'
                 }
             }
         },
         series: [{
             name,
-            data
+            data,
+            style: {
+                fontFamily
+            }
         }],
         exporting: { enabled: false }
     });

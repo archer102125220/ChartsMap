@@ -31,21 +31,31 @@ const Draw = (Lable, Selecter) => {
         .filter(item => item != 'NO');
 
     // TOP3 上色
+    let HsinchuZ = {
+        color: "",
+        id: "TW-HSZ",
+        title: "Hsinchu"
+    };
     const AreasLable = SortData
         .sort((a, b) => b[1] - a[1])
+        //.slice(0,5)
         .map(sd => {
             return { ...ARAE_KEY.find(({ title }) => sd[0] === title), Total: sd[1] }
         })
         .map((sd, index, arr) => {
             if (sd.Total > 0 && index < TopColor.length) {
                 sd.color = TopColor[index];
-            }else if (sd.Total > 0 && index >= arr.length - 4) {
-                sd.color = LastColor[arr.length-index];
+            } else if (sd.Total > 0 && index >= arr.length - 4) {
+                sd.color = LastColor[arr.length - index];
             } else {
                 sd.color = NormalColor;
             }
+            if (sd.id == "TW-HSQ") {
+                HsinchuZ.color = sd.color;
+            }
             return sd;
         });
+    AreasLable.push(HsinchuZ);
     // End 上色
 
 

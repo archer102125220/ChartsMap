@@ -1,11 +1,27 @@
 const Draw = (Lable, Selecter) => {
     let SelectData = ProcessData.filter((value) => value.item == Selecter);
-    let SortData = [], i = 0;
+    let SortData = [],
+        i = 0,
+        TopColor = [
+            'rgba(228, 50, 54, .5)',
+            'rgba(218, 188, 46, .8)',
+            'rgba(148, 255, 100, .5)',
+            'rgba(50, 62, 228, 0.5)',
+            'rgba(228, 50, 204, 0.5)'
+        ],
+        LastColor = [
+            'rgba(50, 222, 228, 0.5)',
+            'rgba(50, 222, 228, 0.5)',
+            'rgba(50, 222, 228, 0.5)',
+            'rgba(50, 222, 228, 0.5)',
+            'rgba(50, 222, 228, 0.5)'
+        ],
+        NormalColor = 'rgba(97, 133, 111, .5)';
     $.each(SelectData[0], (index, val) => {
         if (index != 'item' && index != "Total" && index != "title") {
             SortData[i] = [];
             SortData[i][0] = index;
-            SortData[i][1] = val.replace(/\%/, '');
+            SortData[i][1] = Number(val.replace(/\%/, ''));
             i++;
         }
     });
@@ -16,27 +32,23 @@ const Draw = (Lable, Selecter) => {
 
     // TOP3 上色
     const AreasLable = SortData
-        .map((sd) => { return { ...sd, 1: Number(sd[1]) } })
         .sort((a, b) => b[1] - a[1])
-        .slice(0, 5)
         .map(sd => {
             return { ...ARAE_KEY.find(({ title }) => sd[0] === title), Total: sd[1] }
         })
-        .map((sd, index) => {
-            if (sd.Total > 0) {
-                switch (index) {
-                    case 0: sd.color = 'rgba(228, 50, 54, .5)'; break;    // 紅
-                    case 1: sd.color = 'rgba(218, 188, 46, .8)'; break;     // 黃
-                    case 2: sd.color = 'rgba(148, 255, 100, .5)'; break;   // 綠
-                    case 3: sd.color = 'rgba(50, 62, 228, 0.5)'; break;   //藍
-                    case 4: sd.color = 'rgba(228, 50, 204, 0.5)'; break;   //紫色
-                }
+        .map((sd, index, arr) => {
+            if (sd.Total > 0 && index < TopColor.length) {
+                sd.color = TopColor[index];
+            }else if (sd.Total > 0 && index >= arr.length - 4) {
+                sd.color = LastColor[arr.length-index];
             } else {
-                sd.color = 'rgba(97, 133, 111, .5)';
+                sd.color = NormalColor;
             }
             return sd;
         });
     // End 上色
+
+
 
     // 各地區標籤
     let ImagesLable = '', j = 0;
@@ -65,9 +77,9 @@ const Draw = (Lable, Selecter) => {
             ImagesLable = ImagesLable.replace(/\%sr/, '');
         }
     }
-/*"zoomLevel": 1.59,
-            "zoomLongitude": 122.79,
-            "zoomLatitude": 24.18, */
+    /*"zoomLevel": 1.59,
+                "zoomLongitude": 122.79,
+                "zoomLatitude": 24.18, */
     AmCharts.makeChart("map", JSON.parse(`{
         "type": "map",
         "pathToImages": "http://www.amcharts.com/lib/3/images/",

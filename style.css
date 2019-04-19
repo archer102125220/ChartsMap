@@ -71,7 +71,7 @@ body {
 
 
 .data-control .data-color span[data-color='red'] {
-  background-color: #933f49;
+  background-color: #e43236;
 }
 
 .data-control .data-color span[data-color='yellow'] {
@@ -129,7 +129,17 @@ body {
   padding-right: 30px;
 }
 
-/**/
+
+#control div h3{
+  display: block;
+  background-color: gray;
+  width: 60px;
+  text-align: center;
+  padding: .25rem;
+  margin-bottom: .5rem;
+  border-radius: .5rem;
+}
+
 .data-control>div {
   display: inline-block;
 }

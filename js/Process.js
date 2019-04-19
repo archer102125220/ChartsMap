@@ -3,7 +3,7 @@ const Draw = (Lable, Selecter) => {
     let SortData = [],
         i = 0,
         TopColor = [
-            'rgba(228, 50, 54, .5)',
+            'rgba(228, 50, 54, 1)',
             'rgba(218, 188, 46, .8)',
             'rgba(148, 255, 100, .5)',
             'rgba(50, 62, 228, 0.5)',

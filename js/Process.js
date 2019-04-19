@@ -13,8 +13,6 @@ const Draw = (Lable, Selecter) => {
             'rgba(50, 222, 228, 0.5)',
             'rgba(50, 222, 228, 0.5)',
             'rgba(50, 222, 228, 0.5)',
-            'rgba(50, 222, 228, 0.5)',
-            'rgba(50, 222, 228, 0.5)'
         ],
         NormalColor = 'rgba(97, 133, 111, .5)';
     $.each(SelectData[0], (index, val) => {
@@ -45,8 +43,8 @@ const Draw = (Lable, Selecter) => {
         .map((sd, index, arr) => {
             if (sd.Total > 0 && index < TopColor.length) {
                 sd.color = TopColor[index];
-            } else if (sd.Total > 0 && index >= arr.length - 4) {
-                sd.color = LastColor[arr.length - index];
+            } else if (sd.Total > 0 && index >= arr.length - 3) {
+                sd.color = LastColor[arr.length - index-1];
             } else {
                 sd.color = NormalColor;
             }

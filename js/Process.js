@@ -10,8 +10,8 @@ const Draw = (Lable, Selecter) => {
             'rgba(228, 50, 204, 0.5)'
         ],
         LastColor = [
-            'rgba(50, 222, 228, 0.5)',
-            'rgba(50, 222, 228, 0.5)',
+            'rgba(204, 85, 0, 1)',
+            'rgba(131,45,20, 1.0)',
             'rgba(50, 222, 228, 0.5)',
         ],
         NormalColor = 'rgba(97, 133, 111, .5)';
@@ -43,7 +43,7 @@ const Draw = (Lable, Selecter) => {
         .map((sd, index, arr) => {
             if (sd.Total > 0 && index < TopColor.length) {
                 sd.color = TopColor[index];
-            } else if (sd.Total > 0 && index >= arr.length - 3) {
+            } else if ( index >= arr.length - 3) {
                 sd.color = LastColor[arr.length - index-1];
             } else {
                 sd.color = NormalColor;

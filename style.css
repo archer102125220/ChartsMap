@@ -26,9 +26,9 @@ body {
   margin: 0;
   padding: 0 0 0 1rem;
   position: absolute;
-  top: 17%;
+  top: 12.5%;
   right: 0%;
-  height: 560px;
+  height: 630px;
   width: 800px;
   background-color: rgba(0, 0, 0, .2);
 }
@@ -90,6 +90,18 @@ body {
   background-color: #e432cc80;
 }
 
+.data-control .data-color span[data-color='orange'] {
+  background-color: #cc5500;
+}
+
+.data-control .data-color span[data-color='brown'] {
+  background-color: #832d14;
+}
+
+.data-control .data-color span[data-color='lightblue'] {
+  background-color: #32dee480;
+}
+
 #pie {
   height: 255px;
   width: 420px;
@@ -108,10 +120,16 @@ body {
   display: inline-block;
 }
 
-#control{
+#control {
   width: 370px;
 }
+
+#control div {
+  display: inline-block;
+  padding-right: 30px;
+}
+
 /**/
-.data-control > div{
+.data-control>div {
   display: inline-block;
 }

@@ -12,7 +12,7 @@ const Draw = (Lable, Selecter) => {
         LastColor = [
             'rgb(75, 83, 32)',
             'rgb(25, 84, 96)',
-            'rgb(63, 38, 3)',
+            'rgb(131, 76, 0)',
         ],
         NormalColor = 'rgba(97, 133, 111, .5)';
     $.each(SelectData[0], (index, val) => {

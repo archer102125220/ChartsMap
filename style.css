@@ -90,16 +90,16 @@ body {
   background-color: #e432cc80;
 }
 
-.data-control .data-color span[data-color='orange'] {
-  background-color: #cc5500;
+.data-control .data-color span[data-color='deepgreen'] {
+  background-color: #4b5320;
+}
+
+.data-control .data-color span[data-color='deepblue'] {
+  background-color: #195460;
 }
 
 .data-control .data-color span[data-color='brown'] {
-  background-color: #832d14;
-}
-
-.data-control .data-color span[data-color='lightblue'] {
-  background-color: #32dee480;
+  background-color: #3f2603;
 }
 
 #pie {

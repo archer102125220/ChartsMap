@@ -10,9 +10,9 @@ const Draw = (Lable, Selecter) => {
             'rgba(228, 50, 204, 0.5)'
         ],
         LastColor = [
-            'rgba(204, 85, 0, 1)',
-            'rgba(131,45,20, 1.0)',
-            'rgba(50, 222, 228, 0.5)',
+            'rgb(75, 83, 32)',
+            'rgb(25, 84, 96)',
+            'rgb(63, 38, 3)',
         ],
         NormalColor = 'rgba(97, 133, 111, .5)';
     $.each(SelectData[0], (index, val) => {
@@ -43,17 +43,19 @@ const Draw = (Lable, Selecter) => {
         .map((sd, index, arr) => {
             if (sd.Total > 0 && index < TopColor.length) {
                 sd.color = TopColor[index];
-            } else if ( index >= arr.length - 3) {
-                sd.color = LastColor[arr.length - index-1];
+            } else if (index >= arr.length - 3) {
+                sd.color = LastColor[arr.length - index - 1];
             } else {
                 sd.color = NormalColor;
             }
-            if (sd.id == "TW-HSQ") {
+            if (sd.title == HsinchuZ.title) {
                 HsinchuZ.color = sd.color;
             }
             return sd;
         });
+
     AreasLable.push(HsinchuZ);
+    //console.log(AreasLable);
     // End 上色
 
 

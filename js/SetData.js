@@ -108,4 +108,3 @@ const SetData = async (Files) => {
         });
     });
 }
-
